@@ -5,7 +5,6 @@ import edu.wpi.first.wpilibj.PWMVictorSPX;
 public class ClimberSubsystem { 
   PWMVictorSPX climberMotor = new PWMVictorSPX(3);
   public ClimberSubsystem() {
-    
   }
 
   public void climberMove(){
