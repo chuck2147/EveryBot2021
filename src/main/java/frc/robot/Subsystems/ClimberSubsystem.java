@@ -1,7 +1,6 @@
 package frc.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.PWMVictorSPX;
-import edu.wpi.first.wpilibj.Spark;
 
 public class ClimberSubsystem { 
   PWMVictorSPX climberMotor = new PWMVictorSPX(3);
