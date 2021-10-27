@@ -2,30 +2,22 @@ package frc.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.PWMVenom;
 import edu.wpi.first.wpilibj.PWMVictorSPX;
+import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class DrivetrainSubsystem {
-    PWMVictorSPX leftMoter = new PWMVictorSPX(6);
-    PWMVictorSPX rightMoter = new PWMVictorSPX(7);
+public class DrivetrainSubsystem extends SubsystemBase {
+    PWMVictorSPX leftMotor = new PWMVictorSPX(6);
+    PWMVictorSPX rightMotor = new PWMVictorSPX(7);
 
-    public void driveFoward(){
-        leftMoter.set(0.5);
-        rightMoter.set(0.5);
+    private final DifferentialDrive diffDrive = new DifferentialDrive(leftMotor, rightMotor);
+
+
+    public DrivetrainSubsystem () {
+
     }
-    public void driveBackward(){
-        leftMoter.set(-0.5);
-        rightMoter.set(-0.5);
-    }
-    public void stop(){
-        leftMoter.set(0);
-        rightMoter.set(0);
-    }
-    public void rotateLeft(){
-        leftMoter.set(-0.5);
-        rightMoter.set(0.5);
-    }
-    public void rotateRight(){
-        leftMoter.set(0.5);
-        rightMoter.set(-0.5);
+
+    public void tankDrive(double rightSpeed, double leftSpeed) {
+        diffDrive.tankDrive(leftSpeed, rightSpeed);
     }
 
 }
