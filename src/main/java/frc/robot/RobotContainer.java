@@ -14,6 +14,16 @@ public class RobotContainer {
    IntakeSubsystem intake = new IntakeSubsystem();
    DrivetrainSubsystem Drivetrain = new DrivetrainSubsystem();
    private Joystick driverJoystick = new Joystick(1);
+   private Joystick operatorJoystick = new Joystick(2);
    private JoystickButton climberButton = new JoystickButton(driverJoystick, 1);
+   private JoystickButton climberDownButton = new JoystickButton(driverJoystick, 2);
+   private JoystickButton intakeUpButton = new JoystickButton(operatorJoystick, 1);
+   private JoystickButton intakeDownButton = new JoystickButton(operatorJoystick, 2);
+   private JoystickButton indexerForwardButton = new JoystickButton(operatorJoystick, 3);
+   private JoystickButton indexerBackwardsButton = new JoystickButton(operatorJoystick, 4);
+
+   public RobotContainer() {
+      
+   }
 }
 
