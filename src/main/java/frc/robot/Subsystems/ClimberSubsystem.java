@@ -1,8 +1,9 @@
 package frc.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.PWMVictorSPX;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class ClimberSubsystem { 
+public class ClimberSubsystem extends SubsystemBase{ 
   PWMVictorSPX climberMotor = new PWMVictorSPX(3);
   public ClimberSubsystem() {
   }

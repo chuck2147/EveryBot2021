@@ -1,8 +1,9 @@
 package frc.robot.Subsystems;
 
 import edu.wpi.first.wpilibj.PWMVictorSPX;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class IndexerSubsystem {
+public class IndexerSubsystem extends SubsystemBase{
   PWMVictorSPX indexerMotor = new PWMVictorSPX(5);
   
   public void indexerOn(){
