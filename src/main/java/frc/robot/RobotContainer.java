@@ -2,8 +2,10 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Commands.ClimberCommand;
+import frc.robot.Commands.TankDriveCommand;
 import frc.robot.Subsystems.ClimberSubsystem;
 import frc.robot.Subsystems.DrivetrainSubsystem;
 import frc.robot.Subsystems.IndexerSubsystem;
@@ -24,13 +26,19 @@ public class RobotContainer {
    private JoystickButton indexerBackwardsButton = new JoystickButton(operatorJoystick, 4);
 
    public RobotContainer() {
-   configureButtonBindings();   
+      configureButtonBindings();
    }
-   private void configureButtonBindings(){
-      
-//    <<<<<DRIVER CONTROLLER>>>>>
-     
+
+   private void configureButtonBindings() {
+
+      // <<<<<DRIVER CONTROLLER>>>>>
+      Drivetrain.setDefaultCommand(getTankDrive());
+
       climberUpButton.whileHeld(new ClimberCommand(climber));
+   }
+
+   private Command getTankDrive() {
+      return new TankDriveCommand(Drivetrain, () -> driverJoystick.getRawAxis(5), () -> driverJoystick.getRawAxis(0));
    }
 }
 
