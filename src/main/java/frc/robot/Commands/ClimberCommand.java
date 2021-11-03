@@ -2,20 +2,28 @@ package frc.robot.Commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.Subsystem;
+import frc.robot.Constants;
+import frc.robot.Constants.ClimberState;
 import frc.robot.Subsystems.ClimberSubsystem;
 
+public class ClimberCommand extends CommandBase {
+    private final ClimberSubsystem climber;
+    private final Constants.ClimberState climberState;
 
-public class ClimberCommand extends CommandBase{
-    private final ClimberSubsystem climber; 
-
-    public ClimberCommand(ClimberSubsystem climber){
-        this.climber = climber; 
+    public ClimberCommand(ClimberSubsystem climber, Constants.ClimberState climberState) {
+        this.climber = climber;
+        this.climberState = climberState;
         addRequirements(climber);
 
     }
+
     @Override
-    public void execute(){
-        climber.climberMove();
+    public void execute() {
+        if (climberState == ClimberState.Down) {
+            climber.climberReverse();
+        } else if (climberState == ClimberState.Up) {
+            climber.climberMove();
+        }
     }
     @Override
     public void end(boolean interrupted){

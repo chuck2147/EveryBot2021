@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Commands.ClimberCommand;
 import frc.robot.Commands.TankDriveCommand;
+import frc.robot.Constants.ClimberState;
 import frc.robot.Subsystems.ClimberSubsystem;
 import frc.robot.Subsystems.DrivetrainSubsystem;
 import frc.robot.Subsystems.IndexerSubsystem;
@@ -32,10 +33,12 @@ public class RobotContainer {
       
 //    <<<<<DRIVER CONTROLLER>>>>>
      
-      climberUpButton.whileHeld(new ClimberCommand(climber));
+      climberUpButton.whileHeld(new ClimberCommand(climber, ClimberState.Up));
+      climberUpButton.whenReleased(climber::climberStop, climber);
       Drivetrain.setDefaultCommand(getTankDrive());
 
-      climberUpButton.whileHeld(new ClimberCommand(climber));
+      climberDownButton.whileHeld(new ClimberCommand(climber, ClimberState.Down));
+      climberDownButton.whenReleased(climber::climberStop, climber);
    }
 
    private Command getTankDrive() {
