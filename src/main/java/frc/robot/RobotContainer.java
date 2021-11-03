@@ -18,8 +18,8 @@ public class RobotContainer {
    IndexerSubsystem index = new IndexerSubsystem();
    IntakeSubsystem intake = new IntakeSubsystem();
    DrivetrainSubsystem Drivetrain = new DrivetrainSubsystem();
-   private Joystick driverJoystick = new Joystick(1);
-   private Joystick operatorJoystick = new Joystick(2);
+   private Joystick driverJoystick = new Joystick(0);
+   private Joystick operatorJoystick = new Joystick(1);
    private JoystickButton climberUpButton = new JoystickButton(driverJoystick, 1);
    private JoystickButton climberDownButton = new JoystickButton(driverJoystick, 2);
    private JoystickButton intakeUpButton = new JoystickButton(operatorJoystick, 1);
@@ -48,7 +48,7 @@ public class RobotContainer {
    }
 
    private Command getArcadeDrive() {
-      return new ArcadeDriveCommand(Drivetrain, () -> driverJoystick.getRawAxis(5), () -> driverJoystick.getRawAxis(0));
+      return new ArcadeDriveCommand(Drivetrain, () -> -driverJoystick.getRawAxis(1), () -> driverJoystick.getRawAxis(4));
    }
 }
 

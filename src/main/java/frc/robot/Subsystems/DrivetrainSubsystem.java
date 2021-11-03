@@ -6,8 +6,8 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DrivetrainSubsystem extends SubsystemBase {
-    PWMVictorSPX leftMotor = new PWMVictorSPX(3);
-    PWMVictorSPX rightMotor = new PWMVictorSPX(4);
+    PWMVictorSPX leftMotor = new PWMVictorSPX(6);
+    PWMVictorSPX rightMotor = new PWMVictorSPX(7);
 
     private final DifferentialDrive diffDrive = new DifferentialDrive(leftMotor, rightMotor);
 
