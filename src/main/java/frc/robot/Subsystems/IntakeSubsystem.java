@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class IntakeSubsystem extends SubsystemBase{
-  PWMVictorSPX intakeMotor = new PWMVictorSPX(4); 
+  PWMVictorSPX intakeMotor = new PWMVictorSPX(5); 
 
   public void intakeMove(){
     intakeMotor.set(Constants.Intake_Speed);
