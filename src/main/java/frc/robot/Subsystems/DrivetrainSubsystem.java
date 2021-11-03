@@ -20,4 +20,8 @@ public class DrivetrainSubsystem extends SubsystemBase {
         diffDrive.tankDrive(leftSpeed, rightSpeed);
     }
 
+    public void arcadeDrive(double xSpeed, double zRotation) {
+        diffDrive.arcadeDrive(xSpeed, zRotation);
+    }
+
 }
