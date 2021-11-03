@@ -26,12 +26,13 @@ public class RobotContainer {
    private JoystickButton indexerBackwardsButton = new JoystickButton(operatorJoystick, 4);
 
    public RobotContainer() {
-      configureButtonBindings();
+   configureButtonBindings();   
    }
-
-   private void configureButtonBindings() {
-
-      // <<<<<DRIVER CONTROLLER>>>>>
+   private void configureButtonBindings(){
+      
+//    <<<<<DRIVER CONTROLLER>>>>>
+     
+      climberUpButton.whileHeld(new ClimberCommand(climber));
       Drivetrain.setDefaultCommand(getTankDrive());
 
       climberUpButton.whileHeld(new ClimberCommand(climber));
