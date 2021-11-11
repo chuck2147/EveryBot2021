@@ -9,4 +9,10 @@ public class Constants {
     public enum ClimberState {
         Up, Down
     }
+
+    //Drive train motor IDs
+    public static final int frontLeftMotorId = 5;
+    public static final int rearLeftMotorId = 6;
+    public static final int frontRightMotorId = 7;
+    public static final int rearRightMotorId = 8;
 }
