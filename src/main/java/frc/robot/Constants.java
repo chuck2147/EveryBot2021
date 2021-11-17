@@ -11,8 +11,11 @@ public class Constants {
     }
 
     //Drive train motor IDs
-    public static final int frontLeftMotorId = 5;
-    public static final int rearLeftMotorId = 6;
-    public static final int frontRightMotorId = 7;
-    public static final int rearRightMotorId = 8;
+    public static final int frontLeftMotorId = 1;
+    public static final int rearLeftMotorId = 2;
+    public static final int frontRightMotorId = 4;
+    public static final int rearRightMotorId = 3;
+    public static final int indexerMotorId = 6;
+    public static final int climberMotorId =7;
+    public static final int intakemotorId = 5;
 }

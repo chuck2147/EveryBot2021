@@ -20,9 +20,9 @@ public class ClimberCommand extends CommandBase {
     @Override
     public void execute() {
         if (climberState == ClimberState.Down) {
-            climber.climberReverse();
+            climber.climberDown();
         } else if (climberState == ClimberState.Up) {
-            climber.climberMove();
+            climber.climberUp();
         }
     }
     @Override
