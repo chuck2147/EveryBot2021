@@ -7,15 +7,13 @@ import frc.robot.Constants;
 
 public class ClimberSubsystem extends SubsystemBase{ 
   WPI_VictorSPX climberMotor = new WPI_VictorSPX(Constants.climberMotorId);
-  public ClimberSubsystem() {
-  }
 
   public void climberDown(){
     climberMotor.set(Constants.Climber_Speed);
   }
   
   public void climberStop(){
-    climberMotor.set(0);
+    climberMotor.set(0.0);
   }
   public void climberUp(){
     climberMotor.set(-Constants.Climber_Speed);
